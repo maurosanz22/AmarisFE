@@ -1,0 +1,30 @@
+<header-component></header-component>
+<div class="container-fluid">
+    <div class="row">
+        <sidebar-component></sidebar-component>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">        
+            <br>
+            <h2 class="sub-header">Clients</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users;let i = index" routerLink="/policies/{{user.id}}" style="cursor:pointer;">
+                            <td>{{1+i}}</td>
+                            <td>{{user.name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.role}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

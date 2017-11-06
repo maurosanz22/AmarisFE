@@ -1,0 +1,31 @@
+<header-component></header-component>
+<div class="container-fluid">
+    <div class="row">
+        <sidebar-component></sidebar-component>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">        
+            <br>
+            <br>
+            <h2 class="sub-header">Policies for {{userName}}</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Inception Date</th>
+                            <th>Amount Insured</th>
+                            <th>Installment Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let policy of policies;let i = index" style="cursor:pointer;">
+                            <td>{{1+i}}</td>
+                            <td>{{policy.inceptionDate | date:"yyyy/MM/dd"}}</td>
+                            <td>{{policy.amountInsured}}</td>
+                            <td><span *ngIf="policy.installmentPayment" class="glyphicon glyphicon-ok"></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

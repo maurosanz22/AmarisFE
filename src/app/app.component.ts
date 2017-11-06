@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { LoginService } from "./services/loginService";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Amaris app';
 }

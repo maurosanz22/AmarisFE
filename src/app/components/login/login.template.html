@@ -1,0 +1,24 @@
+<section id="login">
+  <div id="contenedor">
+    <div class="container">
+      <div>
+        <span class="img-responsive"></span>
+      </div>
+      <div class="row">
+        <div class="login">
+          <p class="bienvenido">Welcome!</p>
+          <div class="alert alert-danger" role="alert" *ngIf="showToastr">{{toastrMsn}}</div>
+          <form [formGroup]="userForm" novalidate>
+            <div class="block-usuario">
+              <label>User:</label>
+              <input autocomplete="off" type="email" class="form-control" placeholder="email@something.com" formControlName="userName"
+                [ngClass]="{'error' : !userForm.controls['userName'].valid && showErrors}">
+              <p *ngIf="!userForm.controls['userName'].valid && showErrors" class="error">Required field</p>
+            </div>
+            <button type="sumbit" (click)="login()">Login<i class="fa fa-arrow-right" aria-hidden="true"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
